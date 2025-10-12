@@ -1,0 +1,27 @@
+$primary: #FFFF;
+$secondary: #3E3E3E;
+$info: #0862D1;
+$success: #45A57A;
+$dark: #0E0E0E;
+$light: #FAFAFA;
+
+@import "../lib/bootstrap/dist/scss/bootstrap.scss";
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-hero {
+    background-image: url("/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    background-color: $dark;
+    opacity: 0.5;
+    min-height: 100vh;
+}
