@@ -2,10 +2,116 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container-fluid p-0 h-0">
-
-    <div class="bg-hero min-vh-100">
-        <div class="overlay">
+<section class="bg-hero d-flex flex-column justify-content-between mb-3">
+    <div class="container-fluid px-5 py-3">
+        <div class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand fs-3" href="#">Judge Pizza</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav small">
+                    <li class="nav-item"><a class="nav-link active" href="#">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ürünler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">İletişim</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="container-fluid px-5 py-3">
+        <div class="row">
+            <div class="col-12 col-md-6" style="max-width: 620px">
+                <div class="mb-5">
+                    <p class="display-6 fw-normal lh-1">
+                        Welcome to our esteemed dining establishment, where culinary excellence meets unparalleled service.
+                        Experience a journey of flavors meticulously crafted by our talented chefs using the finest ingredients.
+                    </p>
+                </div>
+                <button class="btn btn-outline-light btn-wide">
+                    LEARN MORE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scrolling-text overflow-hidden">
+        <span class="scrolling-text-inner d-inline-block text-white text-nowrap">
+            JUDGE PIZZA JUDGE PIZZA JUDGE PIZZA JUDGE PIZZA
+        </span>
+    </div>
+
+    <div class="overlay"></div>
+</section>
+
+<section>
+    <div class="container-fluid px-5 py-5">
+        <div class="row mb-4">
+            <div class="col-12 d-flex align-items-center justify-content-between">
+                <h2 class="text-dark display-6">Featured Products</h2>
+                <button class="btn btn-outline-dark btn-wide">SHOP ALL</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/images/p1.jpg" alt="Margherita Pizza">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title text-dark">Margherita Pizza</h5>
+                        <p class="product-description text-secondary text-truncate">
+                            İnce hamur, taze mozarella, domates sosu ve fesleğen yapraklarıyla klasik İtalyan lezzeti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/images/p2.jpg" alt="Pepperoni Pizza">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title text-dark">Pepperoni Pizza</h5>
+                        <p class="product-description text-secondary text-truncate">
+                            Bol mozzarella peyniri ve çıtır pepperoni dilimleriyle nefis, klasik bir favori.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/images/p3.jpg" alt="Vegetarian Pizza">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title text-dark">Vegetarian Pizza</h5>
+                        <p class="product-description text-secondary text-truncate">
+                            Renkli biberler, mantar, siyah zeytin ve taze domateslerle dolu hafif ama lezzetli bir seçenek.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/images/p4.jpg" alt="BBQ Chicken Pizza">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title text-dark">BBQ Chicken Pizza</h5>
+                        <p class="product-description text-secondary text-truncate">
+                            Barbekü soslu tavuk parçaları, karamelize soğan ve cheddar peyniriyle eşsiz bir tat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
