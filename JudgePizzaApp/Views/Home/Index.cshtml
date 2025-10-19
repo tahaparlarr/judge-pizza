@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<section class="bg-hero d-flex flex-column justify-content-between mb-3">
+<section class="bg-hero d-flex flex-column justify-content-between ">
     <div class="container-fluid px-5 py-3">
         <div class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand fs-3" href="#">Judge Pizza</a>
@@ -20,16 +20,18 @@
         </div>
     </div>
 
-    <div class="container-fluid px-5 py-3">
+    <div class="container-fluid p-5">
         <div class="row">
-            <div class="col-12 col-md-6" style="max-width: 620px">
+            <div class="col-12 col-md-6">
                 <div class="mb-5">
-                    <p class="display-6 fw-normal lh-1">
-                        Welcome to our esteemed dining establishment, where culinary excellence meets unparalleled service.
-                        Experience a journey of flavors meticulously crafted by our talented chefs using the finest ingredients.
+                    <p class="fs-1 fw-normal lh-1">
+                        Welcome to our esteemed dining establishment, where culinary excellence meets unparalleled
+                        service.
+                        Experience a journey of flavors meticulously crafted by our talented chefs using the finest
+                        ingredients.
                     </p>
                 </div>
-                <button class="btn btn-outline-light btn-wide">
+                <button class="btn btn-wide btn-outline-light ">
                     LEARN MORE
                 </button>
             </div>
@@ -37,24 +39,28 @@
     </div>
 
     <div class="scrolling-text overflow-hidden">
-        <span class="scrolling-text-inner d-inline-block text-white text-nowrap">
-            JUDGE PIZZA JUDGE PIZZA JUDGE PIZZA JUDGE PIZZA
-        </span>
+        <div class="scrolling-text-inner text-white">
+            <span>JUDGE PIZZA</span>
+            <span>JUDGE PIZZA</span>
+            <span>JUDGE PIZZA</span>
+            <span>JUDGE PIZZA</span>
+            <span>JUDGE PIZZA</span>
+        </div>
     </div>
 
     <div class="overlay"></div>
 </section>
 
 <section>
-    <div class="container-fluid px-5 py-5">
-        <div class="row mb-4">
+    <div class="container-fluid p-5">
+        <div class="row mb-3">
             <div class="col-12 d-flex align-items-center justify-content-between">
                 <h2 class="text-dark display-6">Featured Products</h2>
                 <button class="btn btn-outline-dark btn-wide">SHOP ALL</button>
             </div>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-3">
             <div class="col-md-3">
                 <div class="product-card">
                     <div class="product-image">
@@ -67,6 +73,89 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <img src="/images/aboutus.jpg" alt="Restoran iç mekanı" class="img-fluid object-fit-cover">
+            </div>
+
+            <div class="col-md-6 p-0 d-flex align-items-center">
+                <div class="p-5 w-100">
+                    <div class="mb-3 display-2 text-black">Restoranımız Hakkında</div>
+                    <p class="mb-5 text-muted">
+                        Restoranımızda mutfak sanatını, unutulmaz bir yemek deneyimiyle birleştiriyoruz. Kaliteye ve
+                        misafir
+                        memnuniyetine olan bağlılığımız, her ziyareti özel ve her yemeği bir kutlamaya dönüştürür.
+                    </p>
+                    <a href="/shop" class="btn btn-wide btn-dark">
+                        Hakkımızda Daha Fazlası </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="scrolling-text overflow-hidden">
+        <div class="scrolling-text-inner text-dark">
+            <span>FOLLOW US</span>
+            <span>⦁</span>
+            <span>FOLLOW US</span>
+            <span>⦁</span>
+            <span>FOLLOW US</span>
+            <span>⦁</span>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+        <button class="btn btn-outline-dark btn-wide">SOCIAL</button>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="w-75 text-dark">
+                    <div class="display-3"> İletişime Geçin</div>
+                    <small>Interested in working together? Fill out some info and we will be in touch shortly. We can’t
+                        wait
+                        to hear from you!</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">İsim</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="İsminizi girin">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="surname" class="form-label">Soyisim</label>
+                            <input type="text" class="form-control" id="surname" name="surname"
+                                placeholder="Soyisminizi girin">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-Posta</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="eposta@example.com">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Mesajınız</label>
+                        <textarea class="form-control" id="message" name="message" rows="4"
+                            placeholder="Mesajınızı buraya yazın..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Gönder</button>
+                </form>
             </div>
         </div>
     </div>
