@@ -1,7 +1,4 @@
 ﻿@model JudgePizzaApp.Models.ViewModels.ContactFormViewModel;
-@{
-    ViewData["Title"] = "Home Page";
-}
 
 <section class="bg-hero d-flex flex-column justify-content-between">
     <div class="container-fluid px-5 py-3">
@@ -21,7 +18,7 @@
         </div>
     </div>
 
-    <div class="container-fluid p-5">
+    <div class="container-fluid h-100 p-5">
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="mb-5">
@@ -160,6 +157,48 @@
                     <button asp-controller="Contact" asp-action="Send" type="submit" class="btn btn-dark rounded-pill py-2 px-3">Gönder</button>
                 </form>
             </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col text-center text-xxl text-nowrap text-dark">
+                Judge Pizza
+            </div>
+        </div>
+
+        <div class="row text-center text-dark">
+            <div class="col-md-4 mb-3 fs-5">
+                <div class="mb-3">
+                    Konum
+                </div>
+                Madenler, Boran Sk. 22A, 34776 Ümraniye/İstanbul
+            </div>
+
+            <div class="col-md-4 mb-3 fs-5">
+                <div class="mb-3">İletişim</div>
+                <div>(531) 497 16 34</div>
+                <div class="small">
+                    <div>
+                        Her gün 11.00 – 02.00
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 fs-5">
+                <div class="mb-3 text-center">
+                    Bizi Takip Et
+                </div>
+                <ul class="list-unstyled d-flex justify-content-center">
+                    <li class="bg-dark d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 45px; height: 45px;">
+                        <i class="bi bi-instagram text-white fs-5"></i>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </section>

@@ -11977,3 +11977,7 @@ form .form-control {
 form .form-label {
   color: black;
 }
+
+.text-xxl {
+  font-size: clamp(1.5rem, 12vw, 15.75rem);
+}
