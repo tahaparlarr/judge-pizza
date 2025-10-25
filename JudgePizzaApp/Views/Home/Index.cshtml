@@ -23,14 +23,12 @@
             <div class="col-12 col-md-6">
                 <div class="mb-5">
                     <p class="fs-1 fw-normal lh-1">
-                        Welcome to our esteemed dining establishment, where culinary excellence meets unparalleled
-                        service.
-                        Experience a journey of flavors meticulously crafted by our talented chefs using the finest
-                        ingredients.
+                        Judge Pizza'ya hoş geldiniz! Lezzetli yemekler ve samimi bir atmosfer burada buluşuyor.
+                        Her pizzamız özenle hazırlanıyor ve sizler için enfes tatlar sunuyoruz.
                     </p>
                 </div>
-                <button class="btn btn-wide btn-outline-light ">
-                    LEARN MORE
+                <button class="btn btn-wide btn-outline-light">
+                    DAHA FAZLA BİLGİ
                 </button>
             </div>
         </div>
@@ -49,12 +47,12 @@
     <div class="overlay"></div>
 </section>
 
-<section class="mb-3">
-    <div class="container-fluid p-5">
+<section class="mb-3 p-5">
+    <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-12 d-flex align-items-center justify-content-between">
-                <h2 class="text-dark display-6">Featured Products</h2>
-                <button class="btn btn-outline-dark btn-wide">SHOP ALL</button>
+                <div class="text-dark display-6">Öne Çıkan Lezzetler</div>
+                <button class="btn btn-outline-dark btn-wide">TÜMÜNÜ GÖR</button>
             </div>
         </div>
 
@@ -67,7 +65,8 @@
                     <div class="product-info">
                         <h5 class="product-title text-dark">Margherita Pizza</h5>
                         <p class="product-description text-secondary text-truncate">
-                            İnce hamur, taze mozarella, domates sosu ve fesleğen yapraklarıyla klasik İtalyan lezzeti.
+                            İnce hamur, taptaze mozzarella, domates sosu ve fesleğen yapraklarıyla klasik İtalyan lezzeti.
+                            Bir ısırıkta kendinizi İtalya'da hissedeceksiniz!
                         </p>
                     </div>
                 </div>
@@ -76,23 +75,21 @@
     </div>
 </section>
 
-<section class="mb-3 p-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 p-0">
+<section class="mb-3 m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+        <div class="row m-0 p-0">
+            <div class="col-md-6 m-0 p-0">
                 <img src="/images/aboutus.jpg" alt="Restoran iç mekanı" class="img-fluid object-fit-cover">
             </div>
 
-            <div class="col-md-6 p-0 d-flex align-items-center">
-                <div class="p-5 w-100">
-                    <div class="mb-3 display-2 text-black">Restoranımız Hakkında</div>
-                    <p class="mb-5 text-muted">
-                        Restoranımızda mutfak sanatını, unutulmaz bir yemek deneyimiyle birleştiriyoruz. Kaliteye ve
-                        misafir
-                        memnuniyetine olan bağlılığımız, her ziyareti özel ve her yemeği bir kutlamaya dönüştürür.
+            <div class="col-md-6 d-flex p-0 align-items-center">
+                <div class="w-100 p-5 p-0">
+                    <div class="display-2 text-black p-0 mb-3">Biz Kimiz?</div>
+                    <p class="text-muted mb-5 p-0">
+                        Judge Pizza'da yemek sadece karın doyurmak değil, keyifli bir deneyim. Misafirlerimizle birlikte güzel anılar biriktirmeyi seviyoruz. Gelin, siz de bu lezzet yolculuğuna katılın!
                     </p>
-                    <a href="/shop" class="btn btn-wide btn-dark">
-                        Hakkımızda Daha Fazlası
+                    <a href="/shop" class="btn btn-dark btn-wide">
+                        Daha Fazla Bilgi
                     </a>
                 </div>
             </div>
@@ -103,102 +100,61 @@
 <section class="mb-3 p-0">
     <div class="scrolling-text overflow-hidden">
         <div class="scrolling-text-inner text-dark">
-            <span>FOLLOW US</span>
+            <span>BİZİ TAKİP EDİN</span>
             <span>⦁</span>
-            <span>FOLLOW US</span>
+            <span>BİZİ TAKİP EDİN</span>
             <span>⦁</span>
-            <span>FOLLOW US</span>
+            <span>BİZİ TAKİP EDİN</span>
             <span>⦁</span>
         </div>
     </div>
-    <div class="d-flex align-items-center justify-content-center">
-        <button class="btn btn-dark btn-wide">SOCIAL</button>
+    <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-dark btn-wide">SOSYAL MEDYA</button>
     </div>
 </section>
 
-<section>
+<section class="mb-3 p-0">
     <div class="container-fluid p-5">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="w-75 text-dark">
-                    <div class="display-3 mb-3"> İletişime Geçin</div>
-                    <medium>
-                        Interested in working together? Fill out some info and we will be in touch shortly. We can’t wait to hear from you!
-                    </medium>
+                    <div class="display-3 mb-3">İletişime Geçin</div>
+                    <p>
+                        Bizimle çalışmak ister misiniz? Hadi birkaç bilgiyi doldurun, en kısa sürede sizinle iletişime geçelim.
+                        Sizden haber almak için sabırsızlanıyoruz!
+                    </p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <form method="post">
+            <div class="col-12 col-md-6">
+                <form asp-controller="Contact" asp-action="Send" method="post">
                     <div class="row mb-3">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <label for="name" class="form-label">İsim</label>
-                            <input asp-for="Name" asp- type="text" class="form-control" id="name" name="name">
+                            <input asp-for="Name" type="text" class="form-control" id="name">
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <label for="surname" class="form-label">Soyisim</label>
-                            <input asp-for="Surname" type="text" class="form-control" id="surname" name="surname">
+                            <input asp-for="Surname" type="text" class="form-control" id="surname">
                             <span asp-validation-for="Surname" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">E-Posta</label>
-                        <input asp-for="Email" type="email" class="form-control" id="email" name="email">
+                        <input asp-for="Email" type="email" class="form-control" id="email">
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
 
                     <div class="mb-4">
                         <label for="message" class="form-label">Mesajınız</label>
-                        <textarea asp-for="Message" class="form-control" id="message" name="message" rows="4"></textarea>
+                        <textarea asp-for="Message" class="form-control" id="message" rows="4"></textarea>
                         <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
 
-                    <button asp-controller="Contact" asp-action="Send" type="submit" class="btn btn-dark rounded-pill py-2 px-3">Gönder</button>
+                    <button type="submit" class="btn btn-dark rounded-pill py-2 px-3">Gönder</button>
                 </form>
             </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="row mb-3">
-            <div class="col text-center text-xxl text-nowrap text-dark">
-                Judge Pizza
-            </div>
-        </div>
-
-        <div class="row text-center text-dark">
-            <div class="col-md-4 mb-3 fs-5">
-                <div class="mb-3">
-                    Konum
-                </div>
-                Madenler, Boran Sk. 22A, 34776 Ümraniye/İstanbul
-            </div>
-
-            <div class="col-md-4 mb-3 fs-5">
-                <div class="mb-3">İletişim</div>
-                <div>(531) 497 16 34</div>
-                <div class="small">
-                    <div>
-                        Her gün 11.00 – 02.00
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3 fs-5">
-                <div class="mb-3 text-center">
-                    Bizi Takip Et
-                </div>
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="bg-dark d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 45px; height: 45px;">
-                        <i class="bi bi-instagram text-white fs-5"></i>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </div>
 </section>
