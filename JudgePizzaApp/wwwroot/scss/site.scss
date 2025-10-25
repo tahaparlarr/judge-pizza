@@ -10,128 +10,129 @@ $light: #fafafa;
 
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    color: $light;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: $light;
 }
 
 .bg-hero {
+  position: relative;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  min-height: 100vh;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  nav,
+  .container,
+  .container-fluid,
+  .scrolling-text {
     position: relative;
-    background-image: url("/images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    min-height: 100vh;
-
-    .overlay {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-
-    nav,
-    .container,
-    .container-fluid,
-    .scrolling-text {
-        position: relative;
-        z-index: 2;
-    }
+    z-index: 2;
+  }
 }
 
 .scrolling-text {
-    position: relative;
-    width: 100%;
-    padding: 1rem 0;
-    overflow: hidden;
-    white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .scrolling-text-inner {
-    display: inline-flex;
-    align-items: center;
-    gap: 2rem;
-    animation: scroll-left 30s linear infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  animation: scroll-left 30s linear infinite;
 }
 
 .scrolling-text-inner span {
-    font-size: clamp(3rem, 12vw, 8rem);
-    white-space: nowrap;
+  font-size: clamp(3rem, 12vw, 8rem);
+  white-space: nowrap;
 }
 
 @keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-50%);
-    }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .small {
-    font-size: 0.8rem !important;
+  font-size: 0.8rem !important;
 }
 
 .btn-wide {
-    @extend .rounded-pill, .small, .text-nowrap;
-    padding: 2rem 5rem 2rem 5rem;
+  @extend .rounded-pill, .small, .text-nowrap;
+  padding: 2rem 5rem 2rem 5rem;
 }
 
 @media (max-width: 768px) {
-    .scrolling-text {
-        font-size: 62px;
-    }
+  .scrolling-text {
+    font-size: 62px;
+  }
 
-    .btn-wide {
-        padding: 1rem 2rem 1rem 2rem;
-    }
+  .btn-wide {
+    padding: 1rem 2rem 1rem 2rem;
+  }
 }
 
 .product-image {
-    overflow: hidden;
-    height: 340px;
-    margin-bottom: 16px;
+  overflow: hidden;
+  height: 340px;
+  margin-bottom: 16px;
 }
 
 .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: center center;
-    transition: transform 0.4s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.4s ease-in-out;
 }
 
 .product-image:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .product-title {
-    color: red;
-    font-size: clamp(1.3rem, 1.2vw, 20px);
-    margin-bottom: 12px;
+  color: red;
+  font-size: clamp(1.3rem, 1.2vw, 20px);
+  margin-bottom: 12px;
 }
 
 .product-description {
-    font-size: clamp(12px, 1vw, 1rem);
-    color: #6c757d;
+  font-size: clamp(12px, 1vw, 1rem);
+  color: #6c757d;
 }
 
 form .form-control {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 form .form-label {
-    color: black;
+  color: black;
 }
 
-form input, textarea {
-    @extend .border-black;
+form input,
+textarea {
+  @extend .border-black;
 }
 
 .text-xxl {
-    font-size: clamp(1.5rem, 12vw, 15.75rem);
+  font-size: clamp(1.5rem, 12vw, 15.75rem);
 }
