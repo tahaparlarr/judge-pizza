@@ -1,0 +1,25 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<div class="container-fluid m-0 p-0 vh-100">
+    <div class="row h-100 g-0">
+        <div class="col-2 bg-secondary d-flex flex-column p-3">
+            <h5>Admin Menu</h5>
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item"><a class="nav-link text-dark">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-dark">Products</a></li>
+                <li class="nav-item"><a class="nav-link text-dark">Ingredients</a></li>
+            </ul>
+        </div>
+
+        <div class="col-10 p-3 overflow-auto">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
