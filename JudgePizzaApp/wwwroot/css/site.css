@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -12481,4 +12481,14 @@ form .form-label {
 
 .text-xxl {
   font-size: clamp(1.5rem, 12vw, 15.75rem);
+}
+
+.active {
+  background-color: #452f24 !important;
+  color: #fff !important;
+}
+
+.active:hover {
+  background-color: #5a3e2f !important;
+  color: #fff !important;
 }

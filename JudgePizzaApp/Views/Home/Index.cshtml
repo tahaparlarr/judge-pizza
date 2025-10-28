@@ -1,9 +1,10 @@
 ﻿@model JudgePizzaApp.Models.ViewModels.ContactFormViewModel;
 
 <section class="bg-hero d-flex flex-column justify-content-between">
-    <div class="container-fluid px-5 py-3">
+    <div class="container-fluid px-5">
         <div class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand fs-3" href="#">Judge Pizza</a>
+            <a class="navbar-brand fs-3" asp-controller="Home" asp-action="Index">
+                <img class="img-fluid" width="140" src="/images/judge-pizza-logo.png" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,7 +66,8 @@
                     <div class="product-info">
                         <h5 class="product-title text-dark">Margherita Pizza</h5>
                         <p class="product-description text-secondary text-truncate">
-                            İnce hamur, taptaze mozzarella, domates sosu ve fesleğen yapraklarıyla klasik İtalyan lezzeti.
+                            İnce hamur, taptaze mozzarella, domates sosu ve fesleğen yapraklarıyla klasik İtalyan
+                            lezzeti.
                             Bir ısırıkta kendinizi İtalya'da hissedeceksiniz!
                         </p>
                     </div>
@@ -86,7 +88,8 @@
                 <div class="w-100 p-5 p-0">
                     <div class="display-2 text-black p-0 mb-3">Biz Kimiz?</div>
                     <p class="text-muted mb-5 p-0">
-                        Judge Pizza'da yemek sadece karın doyurmak değil, keyifli bir deneyim. Misafirlerimizle birlikte güzel anılar biriktirmeyi seviyoruz. Gelin, siz de bu lezzet yolculuğuna katılın!
+                        Judge Pizza'da yemek sadece karın doyurmak değil, keyifli bir deneyim. Misafirlerimizle birlikte
+                        güzel anılar biriktirmeyi seviyoruz. Gelin, siz de bu lezzet yolculuğuna katılın!
                     </p>
                     <a href="/shop" class="btn btn-dark btn-wide">
                         Daha Fazla Bilgi
@@ -120,7 +123,8 @@
                 <div class="w-75 text-dark">
                     <div class="display-3 mb-3">İletişime Geçin</div>
                     <p>
-                        Bizimle çalışmak ister misiniz? Hadi birkaç bilgiyi doldurun, en kısa sürede sizinle iletişime geçelim.
+                        Bizimle çalışmak ister misiniz? Hadi birkaç bilgiyi doldurun, en kısa sürede sizinle iletişime
+                        geçelim.
                         Sizden haber almak için sabırsızlanıyoruz!
                     </p>
                 </div>

@@ -136,3 +136,13 @@ textarea {
 .text-xxl {
   font-size: clamp(1.5rem, 12vw, 15.75rem);
 }
+
+.nav-pills .nav-item .nav-link.active {
+  background-color: #452f24 !important;
+  color: #fff !important;
+}
+
+.nav-pills .nav-item .nav-link.active:hover {
+  background-color: #5a3e2f !important;
+  color: #fff !important;
+}
