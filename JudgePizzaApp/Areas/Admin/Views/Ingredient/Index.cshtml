@@ -1,4 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Ürünler";
+﻿@model IEnumerable<IngredientViewModel>
+@{
+    ViewData["Title"] = "Malzemeler";
 }
-<button></button>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Malzemeler</h2>
+        <a class="btn btn-outline-dark btn-lg rounded-pill" asp-controller="Ingredient" asp-action="Create">
+            Malzeme Ekle
+        </a>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <table class="table table-hover mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Malzeme Adı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Select((value, index) => new { value, index }))
+                        {
+                            <tr>
+                                <td>@(item.index + 1)</td>
+                                <td>@item.value.Name</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center">
+            Henüz eklenmiş bir malzeme yok.
+        </div>
+    }
+</div>

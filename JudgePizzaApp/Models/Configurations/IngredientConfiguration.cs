@@ -10,11 +10,6 @@ namespace JudgePizzaApp.Models.Configurations
         {
             builder.ToTable("Ingredient");
 
-            builder.HasKey(i => i.Id);
-
-            builder.Property(i => i.Id)
-                .HasDefaultValueSql("gen_random_uuid()");
-
             builder.Property(i => i.Name)
                 .IsRequired()
                 .HasMaxLength(60);

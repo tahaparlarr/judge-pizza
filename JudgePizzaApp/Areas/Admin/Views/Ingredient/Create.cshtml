@@ -1,0 +1,28 @@
+﻿@model IngredientCreateViewModel
+@{
+    ViewData["Title"] = "Malzemeler";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-4 text-center">Yeni Malzeme Ekle</h3>
+
+                    <form asp-action="Create" method="post" novalidate>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Malzeme Adı</label>
+                            <input asp-for="Name" class="form-control form-control-lg" placeholder="Malzeme adını girin" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-dark btn-lg rounded-pill">Malzemeye Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

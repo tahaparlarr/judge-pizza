@@ -1,5 +1,4 @@
 ﻿using JudgePizzaApp.Data;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JudgePizzaApp.Areas.Admin.Controllers;
