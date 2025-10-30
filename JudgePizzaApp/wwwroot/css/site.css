@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -7261,7 +7261,7 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow) !important;
 }
 
-.shadow-sm {
+.shadow-sm, .nav-admin li a:hover {
   box-shadow: var(--bs-box-shadow-sm) !important;
 }
 
@@ -7822,7 +7822,7 @@ textarea {
   margin-left: 0.25rem !important;
 }
 
-.mx-2 {
+.mx-2, .nav-admin li a {
   margin-right: 0.5rem !important;
   margin-left: 0.5rem !important;
 }
@@ -7946,7 +7946,7 @@ textarea {
   margin-bottom: 0.25rem !important;
 }
 
-.mb-2 {
+.mb-2, .nav-admin li a {
   margin-bottom: 0.5rem !important;
 }
 
@@ -8850,7 +8850,7 @@ textarea {
   border-radius: 50% !important;
 }
 
-.rounded-pill, .btn-wide {
+.rounded-pill, .nav-admin li a, .btn-wide {
   border-radius: var(--bs-border-radius-pill) !important;
 }
 
@@ -11981,6 +11981,10 @@ form .form-label {
 
 .text-xxl {
   font-size: clamp(1.5rem, 12vw, 15.75rem);
+}
+
+.text-brown {
+  color: #452f24;
 }
 
 .nav-admin .nav-item .nav-link.active {
