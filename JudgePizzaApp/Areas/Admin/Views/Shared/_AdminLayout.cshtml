@@ -7,60 +7,95 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Yönetici Paneli</title>
-    <script type="importmap"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/JudgePizzaApp.styles.css" asp-append-version="true" />
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 bg-cream">
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-lg-2 bg-light shadow p-0 d-flex flex-column min-vh-100" id="sidebarMenu">
-                <a class="navbar-brand mb-4 text-center" asp-controller="Home" asp-action="Index">
-                    <img class="img-fluid" width="140" src="/images/judge-pizza-logo.png" alt="Judge Pizza" />
-                </a>
+            <aside class="col-2 border-end bg-light p-3 d-flex flex-column min-vh-100" id="sidebarMenu">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-light border rounded-pill me-2">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="/images/judge-pizza-logo.png" width="60" class="img-fluid" alt="Judge Pizza Logo" />
+                        </a>
+                    </div>
+                    <div class="text-dark fw-light">
+                        Judge Pizza<br />
+                        <span class="text-secondary small">Admin</span>
+                    </div>
+                </div>
 
-                <ul class="nav nav-admin flex-column text-center mb-auto">
+                <ul class="nav flex-column mb-auto nav-admin">
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center justify-content-center gap-2
-                   @(currentController == "Dashboard" ? "active text-brown" : "text-dark")" asp-controller="Dashboard"
-                            asp-action="Index">
-                            <i class="bi bi-speedometer2 fs-5"></i>
+                        <a class="nav-link d-flex align-items-center gap-2 @(currentController == "Dashboard" ? "active text-brown" : "text-dark")"
+                           asp-controller="Dashboard" asp-action="Index">
+                            <i class="bi bi-speedometer2 fs-6"></i>
                             <span>Kontrol Paneli</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center justify-content-center gap-2
-                   @(currentController == "Ingredient" ? "active text-brown" : "text-dark")"
-                            asp-controller="Ingredient" asp-action="Index">
-                            <i class="bi bi-basket fs-5"></i>
+                        <a class="nav-link d-flex align-items-center gap-2 @(currentController == "Ingredient" ? "active text-brown" : "text-dark")"
+                           asp-controller="Ingredient" asp-action="Index">
+                            <i class="bi bi-basket fs-6"></i>
                             <span>Malzemeler</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center justify-content-center gap-2
-                   @(currentController == "Product" ? "active text-brown" : "text-dark")" asp-controller="Product"
-                            asp-action="Index">
-                            <i class="bi bi-bag-check fs-5"></i>
+                        <a class="nav-link d-flex align-items-center gap-2 @(currentController == "Product" ? "active text-brown" : "text-dark")"
+                           asp-controller="Product" asp-action="Index">
+                            <i class="bi bi-bag-check fs-6"></i>
                             <span>Ürünler</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2 @(currentController == "Menu" ? "active text-brown" : "text-dark")"
+                           asp-controller="Menu" asp-action="Index">
+                            <i class="bi bi-bookmark fs-6"></i>
+                            <span>Menü</span>
+                        </a>
+                    </li>
                 </ul>
-            </div>
 
-            <div class="col p-4 mt-3  overflow-auto">
-                <div class="text-brown">
-                    Tekrar hoşgeldin, Judge Pizza Admin👋
+                <div class="mb-3">
+                    <a class="text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
+                        <div class="btn btn-orange w-100 d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-eye"></i>
+                            <span>Websitesini Görüntüle</span>
+                        </div>
+                    </a>
                 </div>
-                @RenderBody()
 
-            </div>
+                <ul class="nav flex-column nav-admin">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2 text-dark"
+                           asp-controller="Settings" asp-action="Index">
+                            <i class="bi bi-gear fs-6"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2 text-dark"
+                           asp-controller="Auth" asp-action="Logout">
+                            <i class="bi bi-box-arrow-right fs-6"></i>
+                            <span>Çıkış</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="col p-4 mt-3">
+                @RenderBody()
+            </main>
         </div>
     </div>
-</body>
 
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -7261,7 +7261,7 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow) !important;
 }
 
-.shadow-sm, .nav-admin li a:hover {
+.shadow-sm {
   box-shadow: var(--bs-box-shadow-sm) !important;
 }
 
@@ -7822,7 +7822,7 @@ textarea {
   margin-left: 0.25rem !important;
 }
 
-.mx-2, .nav-admin li a {
+.mx-2 {
   margin-right: 0.5rem !important;
   margin-left: 0.5rem !important;
 }
@@ -7946,7 +7946,7 @@ textarea {
   margin-bottom: 0.25rem !important;
 }
 
-.mb-2, .nav-admin li a {
+.mb-2, .nav-admin a {
   margin-bottom: 0.5rem !important;
 }
 
@@ -8407,7 +8407,7 @@ textarea {
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-light {
+.text-light, .btn-orange {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
@@ -8834,11 +8834,11 @@ textarea {
   border-radius: var(--bs-border-radius) !important;
 }
 
-.rounded-3 {
+.rounded-3, .btn-orange {
   border-radius: var(--bs-border-radius-lg) !important;
 }
 
-.rounded-4 {
+.rounded-4, .nav-admin a {
   border-radius: var(--bs-border-radius-xl) !important;
 }
 
@@ -8850,7 +8850,7 @@ textarea {
   border-radius: 50% !important;
 }
 
-.rounded-pill, .nav-admin li a, .btn-wide {
+.rounded-pill, .btn-wide {
   border-radius: var(--bs-border-radius-pill) !important;
 }
 
@@ -11934,6 +11934,10 @@ body {
   padding: 2rem 5rem 2rem 5rem;
 }
 
+.bg-orange, .btn-orange {
+  background-color: #EE7C2B;
+}
+
 @media (max-width: 768px) {
   .scrolling-text {
     font-size: 62px;
@@ -11987,12 +11991,11 @@ form .form-label {
   color: #452f24;
 }
 
-.nav-admin .nav-item .nav-link.active {
-  background-color: #452f24 !important;
-  color: #fff !important;
+.bg-cream {
+  background-color: #F8F7F6;
 }
 
-.nav-admin .nav-item .nav-link.active:hover {
-  background-color: #5a3e2f !important;
-  color: #fff !important;
+.nav-admin .active {
+  color: #EE7C2B;
+  background-color: #F5EFEA;
 }
