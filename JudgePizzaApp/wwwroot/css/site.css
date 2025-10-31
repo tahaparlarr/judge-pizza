@@ -321,7 +321,7 @@ strong {
   font-weight: bolder;
 }
 
-small, .small, .btn-wide {
+small, .small, table thead, .btn-wide {
   font-size: 0.875em;
 }
 
@@ -7261,7 +7261,7 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow) !important;
 }
 
-.shadow-sm {
+.shadow-sm, .btn-light-orange:hover {
   box-shadow: var(--bs-box-shadow-sm) !important;
 }
 
@@ -7466,7 +7466,7 @@ textarea.form-control-lg {
 }
 
 .border-black, form input,
-textarea {
+form textarea {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-black-rgb), var(--bs-border-opacity)) !important;
 }
@@ -8006,7 +8006,7 @@ textarea {
   padding: 0.5rem !important;
 }
 
-.p-3 {
+.p-3, table thead th {
   padding: 1rem !important;
 }
 
@@ -8286,7 +8286,7 @@ textarea {
   font-weight: lighter !important;
 }
 
-.fw-light {
+.fw-light, table thead {
   font-weight: 300 !important;
 }
 
@@ -8354,7 +8354,7 @@ textarea {
   text-transform: lowercase !important;
 }
 
-.text-uppercase {
+.text-uppercase, table thead {
   text-transform: uppercase !important;
 }
 
@@ -8382,7 +8382,7 @@ textarea {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-secondary {
+.text-secondary, table thead {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
 }
@@ -11905,15 +11905,13 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
-
-.scrolling-text-inner {
+.scrolling-text .scrolling-text-inner {
   display: inline-flex;
   align-items: center;
   gap: 2rem;
   animation: scroll-left 30s linear infinite;
 }
-
-.scrolling-text-inner span {
+.scrolling-text .scrolling-text-inner span {
   font-size: clamp(3rem, 12vw, 8rem);
   white-space: nowrap;
 }
@@ -11926,32 +11924,44 @@ body {
     transform: translateX(-50%);
   }
 }
-.small, .btn-wide {
+.small, table thead, .btn-wide {
   font-size: 0.8rem !important;
 }
 
 .btn-wide {
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 2rem 5rem;
+  transition: all 0.3s ease;
+}
+.btn-wide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .bg-orange, .btn-orange {
   background-color: #EE7C2B;
 }
 
-@media (max-width: 768px) {
-  .scrolling-text {
-    font-size: 62px;
-  }
-  .btn-wide {
-    padding: 1rem 2rem 1rem 2rem;
-  }
+.btn-orange {
+  transition: all 0.3s ease;
 }
+.btn-orange:hover {
+  background-color: rgb(237.2427947598, 118.1650655022, 33.5572052402);
+  box-shadow: 0 0 15px rgba(238, 124, 43, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-light-orange {
+  transition: all 0.3s ease;
+}
+.btn-light-orange:hover {
+  transform: translateY(-2px);
+}
+
 .product-image {
   overflow: hidden;
   height: 340px;
   margin-bottom: 16px;
 }
-
 .product-image img {
   width: 100%;
   height: 100%;
@@ -11959,8 +11969,7 @@ body {
   transform-origin: center center;
   transition: transform 0.4s ease-in-out;
 }
-
-.product-image:hover img {
+.product-image img:hover {
   transform: scale(1.1);
 }
 
@@ -11978,11 +11987,9 @@ body {
 form .form-control {
   border-radius: 20px;
 }
-
 form .form-label {
   color: black;
 }
-
 .text-xxl {
   font-size: clamp(1.5rem, 12vw, 15.75rem);
 }
@@ -11991,11 +11998,59 @@ form .form-label {
   color: #452f24;
 }
 
-.bg-cream {
+.bg-light-yellow, .nav-admin .active, .btn-light-orange, .btn-light-orange:hover {
+  background-color: #F5EFEA;
+}
+
+.bg-light-green {
+  background-color: #DCFCE7;
+}
+
+.text-orange, .nav-admin .active, .btn-light-orange, .btn-light-orange:hover {
+  color: #EE7C2B;
+}
+
+.bg-cream, table thead {
   background-color: #F8F7F6;
 }
 
-.nav-admin .active {
-  color: #EE7C2B;
-  background-color: #F5EFEA;
+@media (max-width: 768px) {
+  .scrolling-text {
+    font-size: 62px;
+  }
+  .btn-wide {
+    padding: 1rem 2rem;
+  }
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #333;
+  border: 1px solid #EBE8E5;
+  background-color: #fff;
+}
+table thead th {
+  text-align: left;
+}
+table tbody tr {
+  transition: background-color 0.2s ease;
+}
+table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+table tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+table tfoot {
+  background-color: #fafafa;
+  font-weight: 500;
+}
+table tfoot td {
+  padding: 0.75rem 1rem;
+  border-top: 2px solid #dee2e6;
 }

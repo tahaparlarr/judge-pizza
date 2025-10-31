@@ -2,6 +2,125 @@
     ViewData["Title"] = "Panel";
 }
 
-<div class="text-brown">
-    Tekrar hoşgeldin, Judge Pizza Admin👋
+<div class="container-fluid p-3">
+    <div class="row mb-3">
+        <div class="px-3 py-2 fs-1 text-dark">
+            @ViewData["Title"]
+            <div class="fs-6 text-secondary">Tüm mevcut malzeme adlarını ve açıklamalarını yönetin</div>
+        </div>
+    </div>
+
+    <div class="row gx-3 gy-3 mb-3">
+        <div class="col-12 col-md-6">
+            <div class="bg-light border p-3 rounded-3 h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-3 text-orange bg-light-yellow d-flex align-items-center justify-content-center fs-5 me-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-fork-knife"></i>
+                    </div>
+                    <div>
+                        <div class="text-dark fw-bold">Ürün Yönetimi</div>
+                        <small class="text-secondary">Pizza menünüzdeki ürünleri ve kategorileri yönetin</small>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                    <div class="small text-secondary">Toplam Pizza</div>
+                    <div class="text-orange fw-bold">24</div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between w-100 gap-2">
+                    <button class="btn btn-orange flex-grow-1">
+                        <i class="bi bi-pencil me-2"></i> Ürünleri Yönet
+                    </button>
+                    <button class="btn btn-light-orange flex-grow-1">
+                        <i class="bi bi-plus me-1"></i> Yeni Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="bg-light border p-3 rounded-3 h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-3 text-orange bg-light-yellow d-flex align-items-center justify-content-center fs-5 me-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div>
+                        <div class="text-dark fw-bold">Kampanya Yönetimi</div>
+                        <small class="text-secondary">Mevcut kampanyaları yönetin ve yeni kampanyalar ekleyin</small>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                    <div class="small text-secondary">Mevcut Kampanya</div>
+                    <div class="text-success bg-light-green px-3 rounded-pill fw-bold">
+                        <span class="small">Aktif</span>
+                    </div>
+                </div>
+
+                <div class="d-flex w-100">
+                    <button class="btn btn-light-orange flex-grow-1">
+                        <i class="bi bi-plus me-1"></i> Kampanya Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row gx-3 gy-3">
+        <div class="col-12 col-md-6">
+            <div class="bg-light border p-3 rounded-3 h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-3 text-orange bg-light-yellow d-flex align-items-center justify-content-center fs-5 me-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-list"></i>
+                    </div>
+                    <div>
+                        <div class="text-dark fw-bold">Malzeme Yönetimi</div>
+                        <small class="text-secondary">Pizza malzemelerini ve kategorilerini yönetin</small>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                    <div class="small text-secondary">Toplam Malzeme</div>
+                    <div class="text-orange fw-bold">15</div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between w-100 gap-2">
+                    <button class="btn btn-orange flex-grow-1">
+                        <i class="bi bi-pencil me-2"></i> Malzemeleri Yönet
+                    </button>
+                    <button class="btn btn-light-orange flex-grow-1">
+                        <i class="bi bi-plus me-1"></i> Yeni Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="bg-light border p-3 rounded-3 h-100">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-3 text-orange bg-light-yellow d-flex align-items-center justify-content-center fs-5 me-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-clipboard"></i>
+                    </div>
+                    <div>
+                        <div class="text-dark fw-bold">Menü Yönetimi</div>
+                        <small class="text-secondary">Pizza menünüzü ve fiyatlarını yönetin</small>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 px-2">
+                    <div class="small text-secondary">Mevcut Menü</div>
+                    <div class="text-success bg-light-green px-3 rounded-pill fw-bold">
+                        <span class="small">Aktif</span>
+                    </div>
+                </div>
+
+                <div class="d-flex w-100">
+                    <button class="btn btn-light-orange flex-grow-1">
+                        <i class="bi bi-plus me-1"></i> Menü Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

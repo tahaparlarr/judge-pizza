@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Malzemeler";
 }
-
+@* 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Malzemeler</h2>
@@ -41,4 +41,45 @@
             Henüz eklenmiş bir malzeme yok.
         </div>
     }
+</div> *@
+
+<div class="container-fluid p-3">
+    <div class="row mb-3">
+        <div class="px-3 py-2 fs-1 text-dark">
+            @ViewData["Title"]
+            <div class="fs-6 text-secondary">Manage the names and descriptions for all avaliabgle ingredient</div>
+        </div>
+    </div>
+    <div class="row gx-3 mb-3">
+        <div class="col-12">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        @* <th>Kategori</th> *@
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            @* <td>@item.Category</td> *@
+                            <td>
+                                <a asp-action="Edit"><i class="bi bi-pencil text-dark"></i></a>
+                                <a asp-action="Delete"><i class="bi bi-trash text-dark"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Showing 1 to 5 of 25 result</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
 </div>

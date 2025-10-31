@@ -48,18 +48,18 @@ body {
     padding: 1rem 0;
     overflow: hidden;
     white-space: nowrap;
-}
 
-.scrolling-text-inner {
-    display: inline-flex;
-    align-items: center;
-    gap: 2rem;
-    animation: scroll-left 30s linear infinite;
-}
+    .scrolling-text-inner {
+        display: inline-flex;
+        align-items: center;
+        gap: 2rem;
+        animation: scroll-left 30s linear infinite;
 
-.scrolling-text-inner span {
-    font-size: clamp(3rem, 12vw, 8rem);
-    white-space: nowrap;
+        span {
+            font-size: clamp(3rem, 12vw, 8rem);
+            white-space: nowrap;
+        }
+    }
 }
 
 @keyframes scroll-left {
@@ -78,7 +78,13 @@ body {
 
 .btn-wide {
     @extend .rounded-pill, .small, .text-nowrap;
-    padding: 2rem 5rem 2rem 5rem;
+    padding: 2rem 5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .bg-orange {
@@ -87,15 +93,22 @@ body {
 
 .btn-orange {
     @extend .text-light, .bg-orange, .rounded-3;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken(#EE7C2B, 2%);
+        box-shadow: 0 0 15px rgba(238, 124, 43, 0.3);
+        transform: translateY(-2px);
+    }
 }
 
-@media (max-width: 768px) {
-    .scrolling-text {
-        font-size: 62px;
-    }
+.btn-light-orange {
+    @extend .bg-light-yellow, .text-orange;
+    transition: all 0.3s ease;
 
-    .btn-wide {
-        padding: 1rem 2rem 1rem 2rem;
+    &:hover {
+        @extend .bg-light-yellow, .text-orange, .shadow-sm;
+        transform: translateY(-2px);
     }
 }
 
@@ -103,18 +116,18 @@ body {
     overflow: hidden;
     height: 340px;
     margin-bottom: 16px;
-}
 
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: center center;
-    transition: transform 0.4s ease-in-out;
-}
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-origin: center center;
+        transition: transform 0.4s ease-in-out;
 
-.product-image:hover img {
-    transform: scale(1.1);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .product-title {
@@ -128,17 +141,19 @@ body {
     color: #6c757d;
 }
 
-form .form-control {
-    border-radius: 20px;
-}
+form {
+    .form-control {
+        border-radius: 20px;
+    }
 
-form .form-label {
-    color: black;
-}
+    .form-label {
+        color: black;
+    }
 
-form input,
-textarea {
-    @extend .border-black;
+    input,
+    textarea {
+        @extend .border-black;
+    }
 }
 
 .text-xxl {
@@ -149,15 +164,86 @@ textarea {
     color: #452f24;
 }
 
+.bg-light-yellow {
+    background-color: #F5EFEA;
+}
+
+.bg-light-green {
+    background-color: #DCFCE7;
+}
+
+.text-orange {
+    color: #EE7C2B;
+}
+
 .bg-cream {
     background-color: #F8F7F6;
 }
 
-.nav-admin .active {
-    color: #EE7C2B;
-    background-color: #F5EFEA;
+.nav-admin {
+    .active {
+        @extend .bg-light-yellow, .text-orange;
+    }
+
+    a {
+        @extend .rounded-4, .mb-2;
+    }
 }
 
-.nav-admin a {
-    @extend .rounded-4, .mb-2;
+@media (max-width: 768px) {
+    .scrolling-text {
+        font-size: 62px;
+    }
+
+    .btn-wide {
+        padding: 1rem 2rem;
+    }
+}
+
+
+// table
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #333;
+    border: 1px solid #EBE8E5;
+    background-color: #fff;
+
+    thead {
+        @extend .bg-cream, .small, .text-secondary, .text-uppercase, .fw-light;
+
+        th {
+            @extend .p-3;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        tr {
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f3f3f3;
+            }
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: middle;
+        }
+    }
+
+    tfoot {
+        background-color: #fafafa;
+        font-weight: 500;
+
+        td {
+            padding: 0.75rem 1rem;
+            border-top: 2px solid #dee2e6;
+        }
+    }
 }
