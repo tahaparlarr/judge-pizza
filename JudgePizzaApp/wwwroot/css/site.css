@@ -1,10 +1,11 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -12,9 +13,9 @@
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
+  --bs-orange: #ee7c2b;
   --bs-yellow: #ffc107;
-  --bs-green: #198754;
+  --bs-green: #4e7d4e;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
@@ -176,8 +177,8 @@
   --bs-highlight-bg: rgb(102, 77.2, 2.8);
   --bs-border-color: #495057;
   --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
-  --bs-form-valid-color: rgb(117, 183, 152.4);
-  --bs-form-valid-border-color: rgb(117, 183, 152.4);
+  --bs-form-valid-color: rgb(148.8, 177, 148.8);
+  --bs-form-valid-border-color: rgb(148.8, 177, 148.8);
   --bs-form-invalid-color: rgb(234, 133.8, 143.4);
   --bs-form-invalid-border-color: rgb(234, 133.8, 143.4);
 }
@@ -7261,7 +7262,7 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow) !important;
 }
 
-.shadow-sm, .btn-light-orange:hover {
+.shadow-sm, .btn-light-orange:hover, .btn-light-green:hover {
   box-shadow: var(--bs-box-shadow-sm) !important;
 }
 
@@ -8407,7 +8408,7 @@ form textarea {
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-light, .btn-orange {
+.text-light, .btn-green, .btn-orange {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
@@ -8834,7 +8835,7 @@ form textarea {
   border-radius: var(--bs-border-radius) !important;
 }
 
-.rounded-3, .btn-orange {
+.rounded-3, .btn-green, .btn-orange {
   border-radius: var(--bs-border-radius-lg) !important;
 }
 
@@ -11866,18 +11867,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "IBM Plex Serif", serif;
   color: #fafafa;
 }
 
 .bg-hero {
   position: relative;
-  background-image: url("/images/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  background: url("/images/background.jpg") center/cover no-repeat;
   min-height: 100vh;
+  overflow: hidden;
 }
 .bg-hero .overlay {
   position: absolute;
@@ -11912,6 +11910,7 @@ body {
   animation: scroll-left 30s linear infinite;
 }
 .scrolling-text .scrolling-text-inner span {
+  font-family: "Prata", serif;
   font-size: clamp(3rem, 12vw, 8rem);
   white-space: nowrap;
 }
@@ -11938,16 +11937,52 @@ body {
 }
 
 .bg-orange, .btn-orange {
-  background-color: #EE7C2B;
+  background-color: #ee7c2b;
+}
+
+.text-orange, .btn-light-orange:hover, .btn-light-orange {
+  color: #ee7c2b;
 }
 
 .btn-orange {
   transition: all 0.3s ease;
 }
 .btn-orange:hover {
-  background-color: rgb(237.2427947598, 118.1650655022, 33.5572052402);
+  background-color: rgb(236.4855895197, 112.3301310044, 24.1144104803);
   box-shadow: 0 0 15px rgba(238, 124, 43, 0.3);
   transform: translateY(-2px);
+}
+
+.bg-green, .btn-green {
+  background-color: #4e7d4e;
+}
+
+.text-green, .nav-admin .active, .btn-light-green:hover, .btn-light-green {
+  color: #4e7d4e;
+}
+
+.bg-light-green, .nav-admin .active, .btn-light-green:hover, .btn-light-green {
+  background-color: #eaf5ea;
+}
+
+.btn-green {
+  transition: all 0.3s ease;
+}
+.btn-green:hover {
+  background-color: rgb(72.121182266, 115.578817734, 72.121182266);
+  box-shadow: 0 0 15px rgba(78, 125, 78, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-light-green {
+  transition: all 0.3s ease;
+}
+.btn-light-green:hover {
+  transform: translateY(-2px);
+}
+
+.bg-light-yellow, .btn-light-orange:hover, .btn-light-orange {
+  background-color: #f5efea;
 }
 
 .btn-light-orange {
@@ -11966,7 +12001,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform-origin: center center;
   transition: transform 0.4s ease-in-out;
 }
 .product-image img:hover {
@@ -11974,7 +12008,7 @@ body {
 }
 
 .product-title {
-  color: red;
+  color: #ee7c2b;
   font-size: clamp(1.3rem, 1.2vw, 20px);
   margin-bottom: 12px;
 }
@@ -11988,7 +12022,7 @@ form .form-control {
   border-radius: 20px;
 }
 form .form-label {
-  color: black;
+  color: #3e3e3e;
 }
 .text-xxl {
   font-size: clamp(1.5rem, 12vw, 15.75rem);
@@ -11998,20 +12032,8 @@ form .form-label {
   color: #452f24;
 }
 
-.bg-light-yellow, .nav-admin .active, .btn-light-orange, .btn-light-orange:hover {
-  background-color: #F5EFEA;
-}
-
-.bg-light-green {
-  background-color: #DCFCE7;
-}
-
-.text-orange, .nav-admin .active, .btn-light-orange, .btn-light-orange:hover {
-  color: #EE7C2B;
-}
-
 .bg-cream, table thead {
-  background-color: #F8F7F6;
+  background-color: #f8f7f6;
 }
 
 @media (max-width: 768px) {
@@ -12029,7 +12051,7 @@ table {
   border-radius: 12px;
   overflow: hidden;
   color: #333;
-  border: 1px solid #EBE8E5;
+  border: 1px solid #ebe8e5;
   background-color: #fff;
 }
 table thead th {

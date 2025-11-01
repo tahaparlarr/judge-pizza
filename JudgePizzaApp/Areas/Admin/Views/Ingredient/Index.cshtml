@@ -2,52 +2,19 @@
 @{
     ViewData["Title"] = "Malzemeler";
 }
-@* 
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Malzemeler</h2>
-        <a class="btn btn-outline-dark btn-lg rounded-pill" asp-controller="Ingredient" asp-action="Create">
-            Malzeme Ekle
-        </a>
-    </div>
-
-    @if (Model != null && Model.Any())
-    {
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <table class="table table-hover mb-0">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Malzeme Adı</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Select((value, index) => new { value, index }))
-                        {
-                            <tr>
-                                <td>@(item.index + 1)</td>
-                                <td>@item.value.Name</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    }
-    else
-    {
-        <div class="alert alert-warning text-center">
-            Henüz eklenmiş bir malzeme yok.
-        </div>
-    }
-</div> *@
 
 <div class="container-fluid p-3">
     <div class="row mb-3">
-        <div class="px-3 py-2 fs-1 text-dark">
-            @ViewData["Title"]
-            <div class="fs-6 text-secondary">Manage the names and descriptions for all avaliabgle ingredient</div>
+        <div class="d-flex align-items-end justify-content-between">
+            <div class="px-3 py-2 fs-1 text-dark">
+                @ViewData["Title"]
+                <div class="fs-6 text-secondary">Manage the names and descriptions for all avaliabgle ingredient</div>
+            </div>
+            <div>
+                <button class="btn btn-green" data-bs-toggle="modal" data-bs-target="#addIngredientModal">
+                    <i class="bi bi-plus me-2"></i>Malzeme Ekle
+                </button>
+            </div>
         </div>
     </div>
     <div class="row gx-3 mb-3">
@@ -55,7 +22,7 @@
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Ürün</th>
+                        <th>Malzeme Adı</th>
                         @* <th>Kategori</th> *@
                         <th>İşlem</th>
                     </tr>
@@ -67,19 +34,31 @@
                             <td>@item.Name</td>
                             @* <td>@item.Category</td> *@
                             <td>
-                                <a asp-action="Edit"><i class="bi bi-pencil text-dark"></i></a>
-                                <a asp-action="Delete"><i class="bi bi-trash text-dark"></i></a>
+                                <button data-bs-toggle="modal" data-bs-target="#editIngredientModal-@item.Id" class="btn">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <form asp-action="Delete" method="post" class="d-inline">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="btn"
+                                        onclick="return confirm('Bu malzemeyi silmek istediğine emin misin?');">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
+                        <partial name="_EditIngredientModal" model="item"></partial>
                     }
+
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="2">Showing 1 to 5 of 25 result</td>
+                        <td colspan="2">Toplam @ViewBag.IngredientCount malzeme görüntüleniyor</td>
                     </tr>
                 </tfoot>
             </table>
-
         </div>
     </div>
 </div>
+
+<partial name="_AddIngredientModal"></partial>

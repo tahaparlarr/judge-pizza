@@ -1,3 +1,6 @@
+// =======================================================
+// 🎨 RENK DEĞİŞKENLERİ
+// =======================================================
 $primary: #ffffff;
 $secondary: #3e3e3e;
 $info: #0862d1;
@@ -5,245 +8,306 @@ $success: #45a57a;
 $dark: #0e0e0e;
 $light: #fafafa;
 
-@import "../lib/bootstrap/dist/scss/bootstrap.scss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+$orange: #ee7c2b;
+$light-yellow: #f5efea;
+$light-green: #eaf5ea;
+$green: #4e7d4e;
+$brown: #452f24;
+$cream: #f8f7f6;
 
+// =======================================================
+// 📦 BOOTSTRAP VE FONT
+// =======================================================
+@import "../lib/bootstrap/dist/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');// =======================================================
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+// =======================================================
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    color: $light;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Serif", serif;
+  color: $light;
 }
 
+// =======================================================
+// 🌄 HERO SECTION
+// =======================================================
 .bg-hero {
+  position: relative;
+  background: url("/images/background.jpg") center / cover no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  nav,
+  .container,
+  .container-fluid,
+  .scrolling-text {
     position: relative;
-    background-image: url("/images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    min-height: 100vh;
-
-    .overlay {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-
-    nav,
-    .container,
-    .container-fluid,
-    .scrolling-text {
-        position: relative;
-        z-index: 2;
-    }
+    z-index: 2;
+  }
 }
 
+// =======================================================
+// 🌀 SCROLLING TEXT
+// =======================================================
 .scrolling-text {
-    position: relative;
-    width: 100%;
-    padding: 1rem 0;
-    overflow: hidden;
-    white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
 
-    .scrolling-text-inner {
-        display: inline-flex;
-        align-items: center;
-        gap: 2rem;
-        animation: scroll-left 30s linear infinite;
+  .scrolling-text-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    animation: scroll-left 30s linear infinite;
 
-        span {
-            font-size: clamp(3rem, 12vw, 8rem);
-            white-space: nowrap;
-        }
+    span {
+      font-family: "Prata", serif;
+      font-size: clamp(3rem, 12vw, 8rem);
+      white-space: nowrap;
     }
+  }
 }
 
 @keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+// =======================================================
+// 🧩 BUTTONS
+// =======================================================
 .small {
-    font-size: 0.8rem !important;
+  font-size: 0.8rem !important;
 }
 
 .btn-wide {
-    @extend .rounded-pill, .small, .text-nowrap;
-    padding: 2rem 5rem;
-    transition: all 0.3s ease;
+  @extend .rounded-pill, .small, .text-nowrap;
+  padding: 2rem 5rem;
+  transition: all 0.3s ease;
 
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 }
 
+// ---- ORANGE BUTTON ----
 .bg-orange {
-    background-color: #EE7C2B;
+  background-color: $orange;
+}
+.text-orange {
+  color: $orange;
+}
+.btn-orange {
+  @extend .text-light, .bg-orange, .rounded-3;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($orange, 4%);
+    box-shadow: 0 0 15px rgba($orange, 0.3);
+    transform: translateY(-2px);
+  }
 }
 
-.btn-orange {
-    @extend .text-light, .bg-orange, .rounded-3;
-    transition: all 0.3s ease;
+// ---- GREEN BUTTON ----
+.bg-green {
+  background-color: $green;
+}
+.text-green {
+  color: $green;
+}
+.bg-light-green {
+  background-color: $light-green;
+}
 
-    &:hover {
-        background-color: darken(#EE7C2B, 2%);
-        box-shadow: 0 0 15px rgba(238, 124, 43, 0.3);
-        transform: translateY(-2px);
-    }
+.btn-green {
+  @extend .text-light, .bg-green, .rounded-3;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($green, 3%);
+    box-shadow: 0 0 15px rgba($green, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-light-green {
+  @extend .bg-light-green, .text-green;
+  transition: all 0.3s ease;
+
+  &:hover {
+    @extend .bg-light-green, .text-green, .shadow-sm;
+    transform: translateY(-2px);
+  }
+}
+
+// ---- LIGHT ORANGE BUTTON ----
+.bg-light-yellow {
+  background-color: $light-yellow;
 }
 
 .btn-light-orange {
-    @extend .bg-light-yellow, .text-orange;
-    transition: all 0.3s ease;
+  @extend .bg-light-yellow, .text-orange;
+  transition: all 0.3s ease;
 
-    &:hover {
-        @extend .bg-light-yellow, .text-orange, .shadow-sm;
-        transform: translateY(-2px);
-    }
+  &:hover {
+    @extend .bg-light-yellow, .text-orange, .shadow-sm;
+    transform: translateY(-2px);
+  }
 }
 
+// =======================================================
+// 🧁 PRODUCT CARD
+// =======================================================
 .product-image {
-    overflow: hidden;
-    height: 340px;
-    margin-bottom: 16px;
+  overflow: hidden;
+  height: 340px;
+  margin-bottom: 16px;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform-origin: center center;
-        transition: transform 0.4s ease-in-out;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
 
-        &:hover {
-            transform: scale(1.1);
-        }
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 }
 
 .product-title {
-    color: red;
-    font-size: clamp(1.3rem, 1.2vw, 20px);
-    margin-bottom: 12px;
+  color: $orange;
+  font-size: clamp(1.3rem, 1.2vw, 20px);
+  margin-bottom: 12px;
 }
 
 .product-description {
-    font-size: clamp(12px, 1vw, 1rem);
-    color: #6c757d;
+  font-size: clamp(12px, 1vw, 1rem);
+  color: #6c757d;
 }
 
+// =======================================================
+// 🧾 FORMS
+// =======================================================
 form {
-    .form-control {
-        border-radius: 20px;
-    }
+  .form-control {
+    border-radius: 20px;
+  }
 
-    .form-label {
-        color: black;
-    }
+  .form-label {
+    color: $secondary;
+  }
 
-    input,
-    textarea {
-        @extend .border-black;
-    }
+  input,
+  textarea {
+    @extend .border-black;
+  }
 }
 
+// =======================================================
+// 🆎 TEXT SIZES & COLORS
+// =======================================================
 .text-xxl {
-    font-size: clamp(1.5rem, 12vw, 15.75rem);
+  font-size: clamp(1.5rem, 12vw, 15.75rem);
 }
 
 .text-brown {
-    color: #452f24;
-}
-
-.bg-light-yellow {
-    background-color: #F5EFEA;
-}
-
-.bg-light-green {
-    background-color: #DCFCE7;
-}
-
-.text-orange {
-    color: #EE7C2B;
+  color: $brown;
 }
 
 .bg-cream {
-    background-color: #F8F7F6;
+  background-color: $cream;
 }
 
+// =======================================================
+// 🧭 NAVIGATION MENU (ADMIN)
+// =======================================================
 .nav-admin {
-    .active {
-        @extend .bg-light-yellow, .text-orange;
-    }
+  .active {
+    @extend .bg-light-green, .text-green;
+  }
 
-    a {
-        @extend .rounded-4, .mb-2;
-    }
+  a {
+    @extend .rounded-4, .mb-2;
+  }
 }
 
+// =======================================================
+// 📱 RESPONSIVE
+// =======================================================
 @media (max-width: 768px) {
-    .scrolling-text {
-        font-size: 62px;
-    }
+  .scrolling-text {
+    font-size: 62px;
+  }
 
-    .btn-wide {
-        padding: 1rem 2rem;
-    }
+  .btn-wide {
+    padding: 1rem 2rem;
+  }
 }
 
-
-// table
+// =======================================================
+// 📊 TABLES
+// =======================================================
 table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    color: #333;
-    border: 1px solid #EBE8E5;
-    background-color: #fff;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #333;
+  border: 1px solid #ebe8e5;
+  background-color: #fff;
 
-    thead {
-        @extend .bg-cream, .small, .text-secondary, .text-uppercase, .fw-light;
+  thead {
+    @extend .bg-cream, .small, .text-secondary, .text-uppercase, .fw-light;
 
-        th {
-            @extend .p-3;
-            text-align: left;
-        }
+    th {
+      @extend .p-3;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #f3f3f3;
+      }
     }
 
-    tbody {
-        tr {
-            transition: background-color 0.2s ease;
-
-            &:hover {
-                background-color: #f3f3f3;
-            }
-        }
-
-        td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e9ecef;
-            vertical-align: middle;
-        }
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e9ecef;
+      vertical-align: middle;
     }
+  }
 
-    tfoot {
-        background-color: #fafafa;
-        font-weight: 500;
+  tfoot {
+    background-color: #fafafa;
+    font-weight: 500;
 
-        td {
-            padding: 0.75rem 1rem;
-            border-top: 2px solid #dee2e6;
-        }
+    td {
+      padding: 0.75rem 1rem;
+      border-top: 2px solid #dee2e6;
     }
+  }
 }

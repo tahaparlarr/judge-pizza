@@ -1,0 +1,19 @@
+@model IngredientViewModel
+
+<div class="modal fade" id="editIngredientModal-@Model.Id" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4">
+
+            <div class="modal-header bg-light-green">
+                <h5 class="modal-title text-green fw-bold" id="editIngredientLabel">
+                    Malzemeyi Düzenle
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <partial name="_EditIngredientForm" />
+            </div>
+        </div>
+    </div>
+</div>
